@@ -71,6 +71,12 @@ const companiesSlice = createSlice({
         company.employeesCount += 1;
       }
     },
+    addNewCompany(state) {
+      state.companies = [
+        { id: Date.now(), name: "", address: "", employeesCount: 0 },
+        ...state.companies,
+      ];
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(
@@ -88,5 +94,6 @@ export const {
   selectCompany,
   toggleSelectedAll,
   addNewEmployee,
+  addNewCompany,
 } = companiesSlice.actions;
 export default companiesSlice.reducer;

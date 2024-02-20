@@ -9,6 +9,7 @@ import {
   selectCompany,
   toggleSelectedAll,
   addNewEmployee,
+  addNewCompany,
 } from "../Services/companiesSlice";
 import {
   addEmployee,
@@ -65,7 +66,7 @@ function App() {
     }
   };
 
-  function NewEmployee(id: number) {
+  function newEmployee(id: number) {
     dispatch(addNewEmployee(id));
     dispatch(addEmployee(id));
   }
@@ -73,6 +74,14 @@ function App() {
   return (
     <div className="App">
       <div className="Table">
+        <div className="buttonAddBlock">
+          <button
+            className="buttonAdd"
+            onClick={() => dispatch(addNewCompany())}
+          >
+            Добавить компанию
+          </button>
+        </div>
         <Table>
           <THead>
             <TR>
@@ -123,15 +132,9 @@ function App() {
           <div className="buttonAddBlock">
             <button
               className="buttonAdd"
-              onClick={() => NewEmployee(selectCompanies[0])}
+              onClick={() => newEmployee(selectCompanies[0])}
             >
               Добавить сотрудника
-            </button>
-            <button
-              className="buttonAdd"
-              onClick={() => dispatch(deleteEmployee(selectCompanies))}
-            >
-              Удалить сотрудников
             </button>
           </div>
           <Table>
