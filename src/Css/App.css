@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.App{
+  display: flex;
+}
+
+.Table{
+  width: 50%;
+}
+
+.buttonAddBlock{
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+.buttonAdd{
+  background: white;
+  width: 150px;
+  height: 50px;
+}
+.buttonAdd:hover {
+  cursor: pointer;
+  background: #faf2f2;
+  border-radius: 10px;
+}
+
+.select{
+  background: rgb(245, 210, 210);
+  color: black;
+}
